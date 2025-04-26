@@ -1,22 +1,22 @@
 Text Generation with Fine-Tuned GPT-2
 Overview
-This project demonstrates a text generation system built by fine-tuning the GPT-2 model (HuggingFace Transformers) on a public-domain text dataset. The model generates coherent narrative text, achieving a perplexity score of approximately 20 after training. A FastAPI-based REST API enables real-time text generation, showcasing generative AI capabilities for applications like automated content creation. This personal project was developed to explore Large Language Models (LLMs) and aligns with research interests in natural language processing and AI-driven automation.
+This project implements a text generation system by fine-tuning the GPT-2 model from HuggingFace Transformers on the Tiny Shakespeare dataset, a public-domain text corpus. The fine-tuned model generates coherent narrative text, achieving a perplexity score of approximately 20. A FastAPI-based REST API enables real-time text generation, demonstrating practical applications in generative AI. Developed as a personal project to explore Large Language Models (LLMs), this work enhances skills in natural language processing (NLP) and AI-driven automation, aligning with research interests in LLMs and text processing.
 Features
 
-Fine-Tuned GPT-2: Trained gpt2 model on the Tiny Shakespeare dataset for narrative text generation.
-Text Preprocessing: Implemented tokenization and data cleaning using HuggingFace tokenizers and Python.
-API Deployment: Built a FastAPI endpoint (/generate) for real-time text generation from user prompts.
-Evaluation: Achieved a perplexity score of ~20, indicating strong language modeling performance.
-Documentation: Includes Jupyter Notebook for training and evaluation, with results visualized using Matplotlib.
+Model Fine-Tuning: Fine-tuned gpt2 model on Tiny Shakespeare for narrative text generation.
+Text Preprocessing: Applied tokenization and cleaning using HuggingFace tokenizers and Python.
+API Deployment: Deployed a FastAPI endpoint (/generate) for real-time text generation from user prompts.
+Evaluation: Measured model performance with a perplexity score of ~20, indicating effective language modeling.
+Visualization: Included training loss curves in a Jupyter Notebook, visualized with Matplotlib.
 
 Technologies
 
 Programming: Python
 Libraries/Frameworks: HuggingFace Transformers, PyTorch, FastAPI, Pandas, Matplotlib
-Tools: Git, VS Code, Anaconda
+Tools: Git, VS Code, Anaconda, Jupyter Notebook
 Dataset: Tiny Shakespeare (public domain)
 
-Setup Instructions
+Installation
 
 Clone the Repository:git clone https://github.com/yourusername/gpt2-text-gen.git
 cd gpt2-text-gen
@@ -24,66 +24,82 @@ cd gpt2-text-gen
 
 Install Dependencies:pip install -r requirements.txt
 
-Requirements include: transformers, torch, fastapi, uvicorn, pandas, matplotlib.
+Dependencies include transformers, torch, fastapi, uvicorn, pandas, and matplotlib.
 Download Dataset:
-Download the Tiny Shakespeare dataset and place it in the data/ folder.
+Place Tiny Shakespeare in the data/ directory.
 
 
-Fine-Tune GPT-2:
-Run the training script:python train_gpt2.py
-
-
-Alternatively, use the Jupyter Notebook (notebooks/train.ipynb) for step-by-step training.
-
-
-Run the API:
-Start the FastAPI server:uvicorn app.main:app --host 0.0.0.0 --port 8000
-
-
-Test the API:curl -X GET "http://localhost:8000/generate?prompt=Once%20upon%20a%20time"
-
-
+Optional: Download pre-trained model weights (if not fine-tuning):
+Run python download_model.py to fetch gpt2 weights.
 
 
 
 Usage
 
-Training: Use train_gpt2.py or notebooks/train.ipynb to fine-tune GPT-2 on your dataset. Adjust hyperparameters in config.yaml (e.g., epochs, batch size).
-Text Generation: Access the API at http://localhost:8000/generate with a prompt query parameter to generate text.
-Evaluation: Run evaluate.py to compute perplexity and visualize training loss with Matplotlib.
+Fine-Tuning:
+Run the training script:python train_gpt2.py
+
+
+Or use notebooks/train.ipynb for interactive training.
+Configure hyperparameters (e.g., epochs, batch size) in config.yaml.
+
+
+Text Generation:
+Start the FastAPI server:uvicorn app.main:app --host 0.0.0.0 --port 8000
+
+
+Generate text via API:curl -X GET "http://localhost:8000/generate?prompt=Once%20upon%20a%20time"
+
+
+
+
+Evaluation:
+Run evaluate.py to compute perplexity and visualize loss:python evaluate.py
+
+
+
+
 
 Results
 
-Perplexity: Achieved ~20 on the validation set, indicating effective fine-tuning.
+Perplexity: Approximately 20 on the validation set, reflecting strong model performance.
 Sample Output:Prompt: "Once upon a time"
-Output: "Once upon a time, in a kingdom far away, the people gathered to hear tales of valor and love, as the bard spoke of heroes past..."
+Output: "Once upon a time, in a land of ancient tales, the bard wove stories of knights and dreams..."
 
 
-Visualization: Training loss curves are available in notebooks/train.ipynb.
+Visualization: Training loss curves are available in notebooks/train.ipynb, plotted with Matplotlib.
 
 Project Structure
 gpt2-text-gen/
 ├── app/                  # FastAPI application
 │   └── main.py           # API endpoint for text generation
-├── data/                 # Dataset folder (e.g., shakespeare.txt)
-├── notebooks/            # Jupyter Notebooks for training/evaluation
-│   └── train.ipynb
-├── train_gpt2.py        # Training script
+├── data/                 # Dataset (e.g., shakespeare.txt)
+├── notebooks/            # Jupyter Notebooks
+│   └── train.ipynb       # Training and evaluation
+├── train_gpt2.py         # Training script
 ├── evaluate.py           # Evaluation script
+├── download_model.py     # Script to download model weights
 ├── config.yaml           # Hyperparameters
 ├── requirements.txt      # Dependencies
-└── README.md             # Project documentation
+└── README.md             # Documentation
+
+Setup Requirements
+
+Hardware: Laptop with 8GB RAM (GPU optional; use Google Colab for faster training).
+OS: Windows/Linux/MacOS
+Python: Version 3.8+
+Storage: ~2GB for dataset and model weights
 
 Future Improvements
 
-Enhance model performance by experimenting with larger datasets or advanced models (e.g., GPT-Neo).
-Integrate a React front-end for interactive text generation.
-Add support for multi-prompt generation and style transfer.
+Experiment with larger datasets or models (e.g., GPT-Neo) for enhanced performance.
+Develop a React-based front-end for interactive text generation.
+Implement multi-prompt generation and style-specific outputs.
 
 Acknowledgments
 
-Built as a personal project to explore LLMs and generative AI.
-Inspired by HuggingFace tutorials and open-source NLP resources.
+Built as a personal project to advance skills in LLMs and NLP.
+Utilized resources from HuggingFace documentation and open-source NLP tutorials.
 
 Contact
-For questions or collaboration, reach out via GitHub Issues.
+For feedback or inquiries, create an issue on GitHub.
