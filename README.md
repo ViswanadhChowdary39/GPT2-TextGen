@@ -1,4 +1,3 @@
-Below is the content for the README.md file for your **Text Generation with Fine-Tuned GPT-2** project, designed to align with the IIIT-B SRIP 2025 projects **2025-P039 (RASP - AI)** and **2025-P050 (IndicNLP)**, while ensuring privacy by avoiding company references (e.g., Prodigal AI) and using a public dataset (Tiny Shakespeare). This README is professional, highlights your skills (Python, HuggingFace, FastAPI), and matches the project specifics from our prior discussions (e.g., 5-day schedule, April 27, 2025). You can copy and paste this directly into your `README.md` file in your GitHub repository (e.g., `github.com/yourusername/gpt2-text-gen`).
 
 # Text Generation with Fine-Tuned GPT-2
 
@@ -97,37 +96,5 @@ gpt2-text-gen/
 - Built as a personal project to advance skills in LLMs and NLP.
 - Utilized resources from HuggingFace documentation and open-source NLP tutorials.
 
-## Contact
-For feedback or inquiries, create an issue on [GitHub](https://github.com/yourusername/gpt2-text-gen/issues).
 
 ---
-
-### Instructions
-1. **Copy and Paste**:
-   - Open your GitHub repository (e.g., `github.com/yourusername/gpt2-text-gen`).
-   - Create or edit `README.md` in the root directory.
-   - Paste the entire content above into `README.md`.
-2. **Customize**:
-   - Replace `yourusername` with your actual GitHub username (e.g., `abhivirsingh`) in the clone URL and Contact section.
-   - Update the **Results** section with your actual perplexity score (if different from ~20) and a sample output from your model after running `train_gpt2.py`.
-3. **Verify Project Files**:
-   - Ensure your repo includes `train_gpt2.py`, `app/main.py`, `notebooks/train.ipynb`, `evaluate.py`, `download_model.py`, `config.yaml`, and `requirements.txt` as described.
-   - Commit these files to match the **Project Structure** section.
-4. **Privacy Check**:
-   - Confirm no company names (e.g., Prodigal AI, Roostoo) or sensitive data (e.g., API keys) are in the code or commits.
-   - Use a neutral repo name (e.g., `gpt2-text-gen`) to avoid attention.
-5. **Push to GitHub**:
-   - Run:
-     ```bash
-     git add README.md
-     git commit -m "Add README for GPT-2 project"
-     git push origin main
-     ```
-
-### Notes
-- **Privacy**: The README avoids company references, uses a public dataset, and frames the project as personal, ensuring low visibility to companies (unlike Bharath’s repo, which mentions Prodigal AI).
-- **SRIP Fit**: Highlights GPT-2, FastAPI, and perplexity for **2025-P039** (LLM - Generative AI) and text processing for **2025-P050** (IndicNLP).
-- **Next Steps**: Follow the 5-day schedule (Days 3–5, April 29–May 1, 2025) to complete the project. Update the README with final results (e.g., exact perplexity) by May 1.
-- **Friend’s Feedback**: Share with your friend (per April 27, 2025, conversation), asking, “This is my GPT-2 project README for SRIP. Any tweaks to make it stand out for AI research?”
-
-If you need a README for another project (e.g., Sentiment Analysis) or help with code files (e.g., `train_gpt2.py`), let me know!
